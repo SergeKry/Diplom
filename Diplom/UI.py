@@ -22,19 +22,18 @@ def clear_widgets():
 
 def start():
     clear_widgets()
-    start_button = ttk.Button(frame, text="Почати роботу з порожньою базою", command=add_or_find)
+    start_button = ttk.Button(frame, text="Почати роботу з порожньою базою", command=add_or_find, width=35)
     start_button.grid(row=1, column=2, sticky='WE', pady=5)
     ttk.Button(frame, text="Завантажити файл", command=root.destroy).grid(row=2, column=2, sticky='WE', pady=5)
     exit_button = ttk.Button(frame, text="Вийти", command=root.destroy)
     exit_button.grid(row=3, column=2, sticky='NS', pady=(15, 5))
-
     for child in frame.winfo_children():
         child.grid_configure(padx=5)
 
 
 def add_or_find():
     clear_widgets()
-    ttk.Button(frame, text="Додати персону", command=add_person, width=30).grid(row=1, column=1, sticky="WE", pady=5)
+    ttk.Button(frame, text="Додати персону", command=add_person, width=35).grid(row=1, column=1, sticky="WE", pady=5)
     ttk.Button(frame, text="Пошук", command=search).grid(row=2, column=1, sticky="WE", pady=5)
     ttk.Button(frame, text="< Назад", command=start).grid(row=3, column=1, pady=(15, 5))
 
@@ -84,31 +83,31 @@ def add_person():
     name_label = ttk.Label(frame, text="Імʼя*")
     name_label.grid(row=2, column=1, sticky="W")
     name = StringVar()
-    name_input = ttk.Entry(frame, textvariable=name, width=20)
+    name_input = ttk.Entry(frame, textvariable=name, width=25)
     name_input.grid(row=3, column=1, sticky="W")
 
     second_name_label = ttk.Label(frame, text="По батькові")
     second_name_label.grid(row=2, column=2, sticky="W")
     second_name = StringVar()
-    second_name_input = ttk.Entry(frame, textvariable=second_name, width=20)
+    second_name_input = ttk.Entry(frame, textvariable=second_name, width=25)
     second_name_input.grid(row=3, column=2, sticky="W")
 
     last_name_label = ttk.Label(frame, text="Прізвище")
     last_name_label.grid(row=2, column=3, sticky="W")
     last_name = StringVar()
-    last_name_input = ttk.Entry(frame, textvariable=last_name, width=20)
+    last_name_input = ttk.Entry(frame, textvariable=last_name, width=25)
     last_name_input.grid(row=3, column=3, sticky="W")
 
     birth_date_label = ttk.Label(frame, text="Дата народження*")
     birth_date_label.grid(row=4, column=1, sticky="W")
     birth_date = StringVar()
-    birth_date_input = ttk.Entry(frame, textvariable=birth_date, width=20)
+    birth_date_input = ttk.Entry(frame, textvariable=birth_date, width=25)
     birth_date_input.grid(row=5, column=1, sticky="W")
 
     birth_date_label = ttk.Label(frame, text="Дата смерті")
     birth_date_label.grid(row=4, column=2, sticky="W")
     death_date = StringVar()
-    death_date_input = ttk.Entry(frame, textvariable=death_date, width=20)
+    death_date_input = ttk.Entry(frame, textvariable=death_date, width=25)
     death_date_input.grid(row=5, column=2, sticky="W")
 
     gender = StringVar(value='чоловік')
@@ -117,8 +116,8 @@ def add_person():
     female = ttk.Radiobutton(frame, text="Жінка", variable=gender, value="жінка")
     female.grid(row=5, column=3, sticky="W")
 
-    submit = ttk.Button(frame, text="Додати", command=submit_person)
-    submit.grid(row=6, column=3, sticky='W', pady=10)
+    submit = ttk.Button(frame, text="Додати", command=submit_person, width=25)
+    submit.grid(row=6, column=3, sticky='E', pady=10)
 
     separator = ttk.Separator(frame, orient=HORIZONTAL)
     separator.grid(row=7, column=1, sticky='EW', columnspan=3)
@@ -126,8 +125,8 @@ def add_person():
     back = ttk.Button(frame, text="< Назад", command=add_or_find)
     back.grid(row=8, column=1, sticky='WS', pady=10)
 
-    save = ttk.Button(frame, text="Зберегти у файл")
-    save.grid(row=8, column=3, sticky='W', pady=10)
+    save = ttk.Button(frame, text="Зберегти у файл", width=25)
+    save.grid(row=8, column=3, sticky='E', pady=10)
 
     feedback = StringVar()
     feedback_label=ttk.Label(frame, textvariable=feedback)
