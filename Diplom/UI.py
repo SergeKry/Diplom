@@ -5,7 +5,7 @@ from utils import parse_date
 
 root = Tk()
 root.title("Person data")
-root.geometry("640x300")
+root.geometry("800x300")
 root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 root.rowconfigure(2, weight=1)
@@ -154,12 +154,12 @@ def search():
     search_label = ttk.Label(frame, text="Введіть ПІБ")
     search_label.grid(row=2, column=1, sticky="W")
     search_key = StringVar()
-    search_input = ttk.Entry(frame, textvariable=search_key, width=40)
+    search_input = ttk.Entry(frame, textvariable=search_key, width=60)
     search_input.grid(row=3, column=1, sticky="W", pady=3)
     search_button = ttk.Button(frame, text="Пошук", command=search_result)
     search_button.grid(row=3, column=2, sticky='W', pady=3)
 
-    result_area = Frame(frame, height=125, width=150, highlightbackground="grey", highlightthickness=1)
+    result_area = Frame(frame, height=125, width=400, highlightbackground="grey", highlightthickness=1)
     result_area.grid(row=5, column=1, sticky='WE', columnspan=2)
     result_area.grid_propagate(False)
     search_output = StringVar()
