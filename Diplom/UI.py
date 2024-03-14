@@ -28,7 +28,7 @@ def start():
         add_or_find()
 
     clear_widgets()
-    start_button = ttk.Button(frame, text="Почати роботу з порожньою базою", command=add_or_find, width=35)
+    start_button = ttk.Button(frame, text="Почати роботу", command=add_or_find, width=35)
     start_button.grid(row=1, column=2, sticky='WE', pady=5)
     ttk.Button(frame, text="Завантажити файл", command=load_file).grid(row=2, column=2, sticky='WE', pady=5)
     exit_button = ttk.Button(frame, text="Вийти", command=root.destroy)
