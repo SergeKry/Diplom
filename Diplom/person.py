@@ -1,9 +1,14 @@
 import datetime
 from dateutil.relativedelta import relativedelta
+from dateutil import parser
 
 
 class Person(object):
     PERSONS = []
+
+    @staticmethod
+    def parse_date(date):
+        return parser.parse(date).date()
 
     @staticmethod
     def string_date(date):

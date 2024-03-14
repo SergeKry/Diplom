@@ -1,8 +1,7 @@
 from tkinter import *
-from tkinter import ttk, filedialog
+from tkinter import ttk, filedialog, messagebox
 from person import *
-from dateutil import parser
-from filetool import export_file
+from filetool import export_file, import_file
 
 root = Tk()
 root.title("Person data")
@@ -21,15 +20,17 @@ def clear_widgets():
         widget.destroy()
 
 
-def parse_date(date):
-    return parser.parse(date).date()
-
-
 def start():
+    def load_file():
+        file_path = filedialog.askopenfilename(defaultextension='csv', filetypes=[('CSV', '*.csv')])
+        msg = import_file(file_path)
+        messagebox.showinfo(message=msg)
+        add_or_find()
+
     clear_widgets()
     start_button = ttk.Button(frame, text="Почати роботу з порожньою базою", command=add_or_find, width=35)
     start_button.grid(row=1, column=2, sticky='WE', pady=5)
-    ttk.Button(frame, text="Завантажити файл", command=root.destroy).grid(row=2, column=2, sticky='WE', pady=5)
+    ttk.Button(frame, text="Завантажити файл", command=load_file).grid(row=2, column=2, sticky='WE', pady=5)
     exit_button = ttk.Button(frame, text="Вийти", command=root.destroy)
     exit_button.grid(row=3, column=2, sticky='NS', pady=(15, 5))
     for child in frame.winfo_children():
@@ -52,14 +53,14 @@ def add_person():
         if name.get() == '' or birth_date.get() == '':
             return 'Заповніть обовʼязкові поля'
         try:
-            birth = parse_date(birth_date.get())
+            birth = Person.parse_date(birth_date.get())
             if birth > datetime.date.today():
                 return 'Дата народження не може бути в майбутньому'
         except Exception as err:
             return 'Неправильна дата народженя: {}'.format(err)
         if death_date.get() != '':
             try:
-                death = parse_date(death_date.get())
+                death = Person.parse_date(death_date.get())
                 if death > datetime.date.today():
                     return 'Дата смерті не може бути в майбутньому'
                 if death < birth:
@@ -72,8 +73,8 @@ def add_person():
         validation_result = validate_inputs()
         feedback.set(validation_result)
         if 'додано' in validation_result:
-            birth = parse_date(birth_date.get())
-            death = parse_date(death_date.get()) if death_date.get() != '' else None
+            birth = Person.parse_date(birth_date.get())
+            death = Person.parse_date(death_date.get()) if death_date.get() != '' else None
             first_name = name.get()
             sec_name = second_name.get() if second_name.get() != '' else None
             gend = gender.get()
@@ -82,7 +83,7 @@ def add_person():
             return Person(first_name, birth, gend, sec_name, lst_name, death)
 
     def save_file():
-        file_path = filedialog.asksaveasfilename()
+        file_path = filedialog.asksaveasfilename(defaultextension='csv', filetypes=[('CSV', '*.csv')])
         msg = export_file(file_path)
         feedback.set(msg)
 
