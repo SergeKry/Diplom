@@ -1,7 +1,8 @@
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk, filedialog
 from person import *
 from utils import parse_date
+from filetool import export_file
 
 root = Tk()
 root.title("Person data")
@@ -76,6 +77,11 @@ def add_person():
             print('OK')
             return Person(first_name, birth, gend, sec_name, lst_name, death)
 
+    def save_file():
+        file_path = filedialog.asksaveasfilename()
+        msg = export_file(file_path)
+        feedback.set(msg)
+
     clear_widgets()
     title = ttk.Label(frame, text="Додати персону", font='TkDefaultFont 16 bold')
     title.grid(row=1, column=1, sticky="W", pady=10, padx=3)
@@ -125,7 +131,7 @@ def add_person():
     back = ttk.Button(frame, text="< Назад", command=add_or_find)
     back.grid(row=8, column=1, sticky='WS', pady=10)
 
-    save = ttk.Button(frame, text="Зберегти у файл", width=25)
+    save = ttk.Button(frame, text="Зберегти у файл", width=25, command=save_file)
     save.grid(row=8, column=3, sticky='E', pady=10)
 
     feedback = StringVar()

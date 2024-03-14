@@ -33,10 +33,14 @@ class Person(object):
     @classmethod
     def get_persons(cls, search_key):
         result = []
-        for item in cls.PERSONS:
-            full_name = item[7]
-            if search_key.lower() in full_name.lower():
+        if search_key == '*':
+            for item in cls.PERSONS:
                 result.append(cls.build_line(item))
+        else:
+            for item in cls.PERSONS:
+                full_name = item[7]
+                if search_key.lower() in full_name.lower():
+                    result.append(cls.build_line(item))
         return result
 
     @staticmethod
