@@ -12,7 +12,7 @@ root.rowconfigure(0, weight=1)
 def startframe():
     startframe = ttk.Frame(root, padding="3 20 3 12")
     startframe.grid(column=0, row=0, sticky="NWES")
-    ttk.Button(startframe, text="Почати роботу з порожньою базою", command=add_or_find, width=30).grid(row=1, column=1, sticky=(W, E))
+    ttk.Button(startframe, text="Почати роботу з порожньою базою", command=add_or_find).grid(row=1, column=1, sticky=(W, E))
     ttk.Button(startframe, text="Завантажити файл", command=root.destroy).grid(row=2, column=1, sticky='WE')
     ttk.Button(startframe, text="Вийти", command=root.destroy).grid(row=3, column=1)
 
@@ -41,15 +41,17 @@ def add_person():
             if birth > datetime.date.today():
                 return 'Дата народження не може бути в майбутньому'
         except Exception as err:
-            return 'Неправильна дати народженя: {}'.format(err)
+            return 'Неправильна дата народженя: {}'.format(err)
         if death_date.get() != '':
             try:
                 death = parse_date(death_date.get())
                 if death > datetime.date.today():
                     return 'Дата смерті не може бути в майбутньому'
+                if death < birth:
+                    return 'Дата смерті не може буди пізніше народження'
             except Exception:
                 return "Неправильна дата смерті"
-        return f'Песрону {name.get()} додано'
+        return f'Персону {name.get()} додано'
 
     def submit_person():
         validation_result = validate_inputs()
@@ -129,6 +131,12 @@ def add_person():
 
 
 def search():
+
+    def search_result():
+        keyword = search_key.get()
+        result = '\n'.join(Person.get_persons(keyword))
+        search_output.set(result)
+
     search_frame = ttk.Frame(root, padding="3 5 3 12")
     search_frame.grid(column=0, row=0, sticky="NWES")
     title = ttk.Label(search_frame, text="Пошук", font='TkDefaultFont 16 bold')
@@ -139,13 +147,13 @@ def search():
     search_key = StringVar()
     search_input = ttk.Entry(search_frame, textvariable=search_key, width=40)
     search_input.grid(row=3, column=1, sticky="W", pady=3)
-    search_button = ttk.Button(search_frame, text="Пошук")
+    search_button = ttk.Button(search_frame, text="Пошук", command=search_result)
     search_button.grid(row=3, column=2, sticky='W', pady=3)
     separator = ttk.Separator(search_frame, orient=HORIZONTAL)
     separator.grid(row=4, column=1, sticky="WE", columnspan=2)
 
-    search_result = StringVar()
-    result_label = ttk.Label(search_frame, textvariable=search_result)
+    search_output = StringVar()
+    result_label = ttk.Label(search_frame, textvariable=search_output)
     result_label.grid(row=5, column=1, sticky="WE", columnspan=2)
 
     back = ttk.Button(search_frame, text="< Назад", command=add_or_find)

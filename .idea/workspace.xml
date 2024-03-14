@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60cdcc8c-b3a3-46a2-b118-c2848cd84304" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Diplom.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Diplom/UI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Diplom/person.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Diplom/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Diplom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Diplom.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Diplom/UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Diplom/UI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Diplom/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/Diplom/person.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +68,8 @@
       <workItem from="1710377159164" duration="170000" />
       <workItem from="1710377346660" duration="10600000" />
       <workItem from="1710403068941" duration="9201000" />
+      <workItem from="1710420540128" duration="397000" />
+      <workItem from="1710420944587" duration="5252000" />
     </task>
     <servers />
   </component>
@@ -79,7 +77,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Diplom$person.coverage" NAME="person Coverage Results" MODIFIED="1710383528038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
-    <SUITE FILE_PATH="coverage/Diplom$UI.coverage" NAME="UI Coverage Results" MODIFIED="1710411229706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
+    <SUITE FILE_PATH="coverage/Diplom$person.coverage" NAME="person Coverage Results" MODIFIED="1710425815907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
+    <SUITE FILE_PATH="coverage/Diplom$UI.coverage" NAME="UI Coverage Results" MODIFIED="1710426196642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
   </component>
 </project>
