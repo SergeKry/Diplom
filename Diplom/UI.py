@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk, filedialog
 from person import *
-from utils import parse_date
+from dateutil import parser
 from filetool import export_file
 
 root = Tk()
@@ -19,6 +19,10 @@ frame.grid(column=1, row=1, sticky="NWES")
 def clear_widgets():
     for widget in frame.winfo_children():
         widget.destroy()
+
+
+def parse_date(date):
+    return parser.parse(date).date()
 
 
 def start():
@@ -149,7 +153,7 @@ def search():
 
     def search_result():
         keyword = search_key.get()
-        result = '\n'.join(Person.get_persons(keyword))
+        result = '\n'.join(Person.search_person(keyword))
         search_output.set(result)
 
     clear_widgets()

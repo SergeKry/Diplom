@@ -1,10 +1,19 @@
 import datetime
 from dateutil.relativedelta import relativedelta
-from utils import print_date
 
 
 class Person(object):
     PERSONS = []
+
+    @staticmethod
+    def string_date(date):
+        if date is not None:
+            year = str(date.year)
+            month = str(date.month).rjust(2, '0')
+            day = str(date.day).rjust(2, '0')
+            return '.'.join([day, month, year])
+        else:
+            return None
 
     def __init__(self, first_name, birth_date, gender, second_name=None, last_name=None, death_date=None):
         self.first_name = first_name.title()
@@ -13,7 +22,8 @@ class Person(object):
         self.second_name = second_name.title() if second_name is not None else None
         self.last_name = last_name.title() if last_name is not None else None
         self.death_date = death_date
-        Person.PERSONS.append((self.last_name, self.first_name, self.second_name, print_date(self.birth_date), print_date(self.death_date), self.gender, self.age, self.full_name))
+        Person.PERSONS.append((self.last_name, self.first_name, self.second_name, self.string_date(self.birth_date),
+                               self.string_date(self.death_date), self.gender, self.age, self.full_name))
 
     @property
     def age(self):
@@ -31,20 +41,20 @@ class Person(object):
         return full_name.strip()
 
     @classmethod
-    def get_persons(cls, search_key):
+    def search_person(cls, search_key):
         result = []
         if search_key == '*':
             for item in cls.PERSONS:
-                result.append(cls.build_line(item))
+                result.append(cls.build_search_result_line(item))
         else:
             for item in cls.PERSONS:
                 full_name = item[7]
                 if search_key.lower() in full_name.lower():
-                    result.append(cls.build_line(item))
+                    result.append(cls.build_search_result_line(item))
         return result
 
     @staticmethod
-    def build_line(data):
+    def build_search_result_line(data):
         full_name = data[7]
         age_expl = 'років'
         if data[6] % 10 == 1:
