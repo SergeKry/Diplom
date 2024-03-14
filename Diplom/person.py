@@ -7,11 +7,11 @@ class Person(object):
     PERSONS = []
 
     def __init__(self, first_name, birth_date, gender, second_name=None, last_name=None, death_date=None):
-        self.first_name = first_name
+        self.first_name = first_name.title()
         self.birth_date = birth_date
         self.gender = gender
-        self.second_name = second_name
-        self.last_name = last_name
+        self.second_name = second_name.title() if second_name is not None else None
+        self.last_name = last_name.title() if last_name is not None else None
         self.death_date = death_date
         Person.PERSONS.append((self.last_name, self.first_name, self.second_name, print_date(self.birth_date), print_date(self.death_date), self.gender, self.age, self.full_name))
 
