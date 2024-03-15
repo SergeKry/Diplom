@@ -69,7 +69,7 @@ def add_person():
                 return "Неправильна дата смерті"
         return f'Персону {name.get()} додано'
 
-    def submit_person():
+    def submit_person(event=None):
         validation_result = validate_inputs()
         feedback.set(validation_result)
         if 'додано' in validation_result:
@@ -96,6 +96,7 @@ def add_person():
     name = StringVar()
     name_input = ttk.Entry(frame, textvariable=name, width=25)
     name_input.grid(row=3, column=1, sticky="W")
+    name_input.focus()
 
     second_name_label = ttk.Label(frame, text="По батькові")
     second_name_label.grid(row=2, column=2, sticky="W")
@@ -129,6 +130,7 @@ def add_person():
 
     submit = ttk.Button(frame, text="Додати", command=submit_person, width=25)
     submit.grid(row=6, column=3, sticky='E', pady=10)
+    root.bind("<Return>", submit_person)
 
     separator = ttk.Separator(frame, orient=HORIZONTAL)
     separator.grid(row=7, column=1, sticky='EW', columnspan=3)
@@ -152,7 +154,7 @@ def add_person():
 
 def search():
 
-    def search_result():
+    def search_result(event=None):
         keyword = search_key.get()
         result = '\n'.join(Person.search_person(keyword))
         search_output.set(result)
@@ -166,8 +168,10 @@ def search():
     search_key = StringVar()
     search_input = ttk.Entry(frame, textvariable=search_key, width=60)
     search_input.grid(row=3, column=1, sticky="W", pady=3)
+    search_input.focus()
     search_button = ttk.Button(frame, text="Пошук", command=search_result)
     search_button.grid(row=3, column=2, sticky='W', pady=3)
+    root.bind('<Return>', search_result)
 
     result_area = Frame(frame, height=125, width=400, highlightbackground="grey", highlightthickness=1)
     result_area.grid(row=5, column=1, sticky='WE', columnspan=2)
