@@ -77,5 +77,3 @@ class Person(object):
             death_expl = 'Вмер' if data[5] == 'чоловік' else 'Вмерла'
             death_date = f' {death_expl} {data[4]}'
         return ' '.join((full_name, age, gender, birth_date, death_date))
-
-
