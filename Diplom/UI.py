@@ -142,11 +142,11 @@ def add_person():
     save.grid(row=8, column=3, sticky='E', pady=10)
 
     feedback = StringVar()
-    feedback_label=ttk.Label(frame, textvariable=feedback)
+    feedback_label = ttk.Label(frame, textvariable=feedback)
     feedback_label.grid(row=6, column=1, sticky='W', pady=10, columnspan=2)
 
-    for item in (name_input,second_name_input, last_name_input):
-        item.grid_configure(pady=(2,10))
+    for item in (name_input, second_name_input, last_name_input):
+        item.grid_configure(pady=(2, 10))
 
     for child in frame.winfo_children():
         child.grid_configure(padx=5)
