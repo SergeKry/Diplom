@@ -24,8 +24,9 @@ def start():
     def load_file():
         file_path = filedialog.askopenfilename(defaultextension='csv', filetypes=[('CSV', '*.csv')])
         msg = import_file(file_path)
-        messagebox.showinfo(message=msg)
-        add_or_find()
+        if msg:
+            messagebox.showinfo(message=msg)
+            add_or_find()
 
     clear_widgets()
     start_button = ttk.Button(frame, text="Почати роботу", command=add_or_find, width=35)
@@ -187,5 +188,6 @@ def search():
         child.grid_configure(padx=5)
 
 
-start()
-root.mainloop()
+if __name__ == "__main__":
+    start()
+    root.mainloop()
