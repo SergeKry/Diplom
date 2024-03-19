@@ -21,11 +21,11 @@ class Person(object):
             return None
 
     def __init__(self, first_name, birth_date, gender, second_name=None, last_name=None, death_date=None):
-        self.first_name = first_name.title()
+        self.first_name = first_name.strip().title()
         self.birth_date = birth_date
         self.gender = gender
-        self.second_name = second_name.title() if second_name is not None else None
-        self.last_name = last_name.title() if last_name is not None else None
+        self.second_name = second_name.strip().title() if second_name is not None else None
+        self.last_name = last_name.strip().title() if last_name is not None else None
         self.death_date = death_date
         Person.PERSONS.append((self.last_name, self.first_name, self.second_name, self.string_date(self.birth_date),
                                self.string_date(self.death_date), self.gender, self.age, self.full_name))
@@ -43,7 +43,7 @@ class Person(object):
         for item in (self.last_name, self.first_name, self.second_name):
             if item is not None:
                 full_name += f' {item}'
-        return full_name.strip()
+        return full_name
 
     @classmethod
     def search_person(cls, search_key):
