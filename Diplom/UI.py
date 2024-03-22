@@ -80,6 +80,9 @@ def add_person():
             sec_name = second_name.get() if second_name.get() != '' else None
             gend = gender.get()
             lst_name = last_name.get() if last_name.get() != '' else None
+            for variable in (name, second_name, last_name, birth_date, death_date):
+                variable.set('')
+            name_input.focus()
             print('OK')
             return Person(first_name, birth, gend, sec_name, lst_name, death)
 
