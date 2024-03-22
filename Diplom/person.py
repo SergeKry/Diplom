@@ -43,7 +43,7 @@ class Person(object):
         for item in (self.last_name, self.first_name, self.second_name):
             if item is not None:
                 full_name += f' {item}'
-        return full_name
+        return full_name.strip()
 
     @classmethod
     def search_person(cls, search_key):
