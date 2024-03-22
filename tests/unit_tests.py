@@ -17,6 +17,17 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(Person.string_date(date2), '11.11.1990')
         self.assertEqual(Person.string_date(None), None)
 
+    def test_full_name(self):
+        date = datetime.date.today()
+        person1 = Person(' Alex', date, 'чоловік')
+        person2 = Person(' Alex', date, 'чоловік', second_name=' John')
+        person3 = Person(' Alex', date, 'чоловік', second_name=' John', last_name=' ')
+        person4 = Person(' Alex', date, 'чоловік', second_name=' John', last_name='')
+        self.assertEqual(person1.full_name, 'Alex')
+        self.assertEqual(person2.full_name, 'Alex John')
+        self.assertEqual(person3.full_name, 'Alex John')
+        self.assertEqual(person4.full_name, 'Alex John')
+
 
 if __name__ == '__main__':
     unittest.main()
