@@ -28,6 +28,12 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(person3.full_name, 'Alex John')
         self.assertEqual(person4.full_name, 'Alex John')
 
+    def test_age(self):
+        birth_date = datetime.date(1990, 6,6)
+        d_date = datetime.date(2000,6,7)
+        person1 = Person('Alex', birth_date, 'чоловік', death_date=d_date)
+        self.assertEqual(person1.age, 10)
+
 
 if __name__ == '__main__':
     unittest.main()
