@@ -30,12 +30,10 @@ class Person(object):
         connection.commit()
         connection.close()
 
-    def __init__(self, first_name, birth_date, gender, second_name=None, last_name=None, death_date=None):
-        self.first_name = first_name.strip().lower()
+    def __init__(self, full_name, gender, birth_date, death_date=None):
+        self.full_name = full_name.lower()
         self.birth_date = birth_date
         self.gender = gender
-        self.second_name = second_name.strip().lower() if second_name is not None else None
-        self.last_name = last_name.strip().lower() if last_name is not None else None
         self.death_date = death_date
         Person.save_person(self.full_name, self.gender, self.birth_date, self.death_date)
 
@@ -48,30 +46,25 @@ class Person(object):
         else:
             return relativedelta(datetime.date.today(), birth).years
 
-    @property
-    def full_name(self):
-        full_name = ''
-        for item in (self.last_name, self.first_name, self.second_name):
-            if item is not None:
-                full_name += f' {item}'
-        return full_name.strip()
-
     @classmethod
     def search_person(cls, search_key):
-        result = []
         connection = sqlite3.connect("persons.db")
         cursor = connection.cursor()
         if search_key == '*':
             cursor.execute('''SELECT * FROM persons''')
             search_data = cursor.fetchall()
-            for item in search_data:
-                result.append(cls.build_search_result_line(item))
         else:
             search_key = f'%{search_key}%'
             cursor.execute("""SELECT * FROM persons WHERE full_name LIKE (?)""", (search_key,))
             search_data = cursor.fetchall()
-            for item in search_data:
-                result.append(cls.build_search_result_line(item))
+        return search_data
+
+    @staticmethod
+    def print_search_result(keyword):
+        search_data = Person.search_person(keyword)
+        result = []
+        for item in search_data:
+            result.append(Person.build_search_result_line(item))
         return result
 
     @staticmethod

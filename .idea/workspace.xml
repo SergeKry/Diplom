@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60cdcc8c-b3a3-46a2-b118-c2848cd84304" name="Changes" comment="save person to database">
+    <list default="true" id="60cdcc8c-b3a3-46a2-b118-c2848cd84304" name="Changes" comment="full text search enabled">
       <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Diplom/UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Diplom/UI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Diplom/filetool.py" beforeDir="false" afterPath="$PROJECT_DIR$/Diplom/filetool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Diplom/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/Diplom/person.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,31 +40,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests in unit_tests.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.UI.executor&quot;: &quot;Run&quot;,
-    &quot;Python.filetool.executor&quot;: &quot;Run&quot;,
-    &quot;Python.person.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;adding-database&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python tests.Python tests in unit_tests.py.executor": "Run",
+    "Python.UI.executor": "Run",
+    "Python.filetool.executor": "Debug",
+    "Python.person.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "adding-database",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -196,7 +199,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712242236995</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixes for date parsing (day first)">
+      <option name="closed" value="true" />
+      <created>1712256446826</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1712256446826</updated>
+    </task>
+    <task id="LOCAL-00014" summary="full text search enabled">
+      <option name="closed" value="true" />
+      <created>1712259476586</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1712259476586</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,13 +244,15 @@
     <MESSAGE value="unit tests for age" />
     <MESSAGE value="database initialization" />
     <MESSAGE value="save person to database" />
-    <option name="LAST_COMMIT_MESSAGE" value="save person to database" />
+    <MESSAGE value="fixes for date parsing (day first)" />
+    <MESSAGE value="full text search enabled" />
+    <option name="LAST_COMMIT_MESSAGE" value="full text search enabled" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Diplom$.coverage" NAME=" Coverage Results" MODIFIED="1712255925463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Diplom$filetool.coverage" NAME="filetool Coverage Results" MODIFIED="1711109511640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
+    <SUITE FILE_PATH="coverage/Diplom$.coverage" NAME=" Coverage Results" MODIFIED="1712256344027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Diplom$filetool.coverage" NAME="filetool Coverage Results" MODIFIED="1712264475221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
     <SUITE FILE_PATH="coverage/Diplom$test.coverage" NAME="test Coverage Results" MODIFIED="1711452329342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
-    <SUITE FILE_PATH="coverage/Diplom$person.coverage" NAME="person Coverage Results" MODIFIED="1712253865176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
-    <SUITE FILE_PATH="coverage/Diplom$UI.coverage" NAME="UI Coverage Results" MODIFIED="1712255298955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
+    <SUITE FILE_PATH="coverage/Diplom$person.coverage" NAME="person Coverage Results" MODIFIED="1712259287368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
+    <SUITE FILE_PATH="coverage/Diplom$UI.coverage" NAME="UI Coverage Results" MODIFIED="1712265777363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
   </component>
 </project>
