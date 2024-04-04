@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk, filedialog, messagebox
 from person import *
 from filetool import export_file, import_file
+import sqlite3
 
 root = Tk()
 root.title("Person data")
@@ -13,6 +14,13 @@ root.columnconfigure(2, weight=1)
 
 frame = ttk.Frame(root, padding="3 20 3 12")
 frame.grid(column=1, row=1, sticky="NWES")
+
+connection = sqlite3.connect("persons.db")
+cursor = connection.cursor()
+cursor.execute('''CREATE TABLE IF NOT EXISTS persons 
+            (last_name TEXT, first_name TEXT, second_name TEXT, gender TEXT, birth_date TEXT, death_date TEXT)''')
+connection.commit()
+connection.close()
 
 
 def clear_widgets():
