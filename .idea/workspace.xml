@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60cdcc8c-b3a3-46a2-b118-c2848cd84304" name="Changes" comment="Search window styling improved">
+    <list default="true" id="60cdcc8c-b3a3-46a2-b118-c2848cd84304" name="Changes" comment="save person to database">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Diplom/UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Diplom/UI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Diplom/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/Diplom/person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/unit_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit_tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -32,25 +39,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.UI.executor&quot;: &quot;Run&quot;,
-    &quot;Python.person.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python tests.Python tests in unit_tests.py.executor": "Run",
+    "Python.UI.executor": "Run",
+    "Python.filetool.executor": "Run",
+    "Python.person.executor": "Debug",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "adding-database",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.14475.56" />
+        <option value="bundled-python-sdk-09665e90c3a7-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15026.15" />
       </set>
     </attachedChunks>
   </component>
@@ -65,15 +82,169 @@
       <workItem from="1710377159164" duration="170000" />
       <workItem from="1710377346660" duration="10600000" />
       <workItem from="1710403068941" duration="9201000" />
-      <workItem from="1710507196914" duration="981000" />
+      <workItem from="1710507196914" duration="2544000" />
+      <workItem from="1710519781988" duration="127000" />
+      <workItem from="1710520775446" duration="783000" />
+      <workItem from="1710768738306" duration="674000" />
+      <workItem from="1710834562290" duration="140000" />
+      <workItem from="1710835100179" duration="601000" />
+      <workItem from="1710854806421" duration="571000" />
+      <workItem from="1710858609164" duration="611000" />
+      <workItem from="1710877025167" duration="1512000" />
+      <workItem from="1710894105653" duration="1229000" />
+      <workItem from="1710975239035" duration="2000000" />
+      <workItem from="1711107025572" duration="2766000" />
+      <workItem from="1711109919321" duration="2165000" />
+      <workItem from="1711127075271" duration="119000" />
+      <workItem from="1711127212590" duration="3729000" />
+      <workItem from="1711139981681" duration="1314000" />
+      <workItem from="1711445811562" duration="602000" />
+      <workItem from="1711446745672" duration="6054000" />
+      <workItem from="1712233090236" duration="11823000" />
     </task>
+    <task id="LOCAL-00001" summary="Added focus on inputs and hotkeys">
+      <option name="closed" value="true" />
+      <created>1710508322112</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710508322112</updated>
+    </task>
+    <task id="LOCAL-00002" summary="PEP-8 updates">
+      <option name="closed" value="true" />
+      <created>1710508590769</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710508590769</updated>
+    </task>
+    <task id="LOCAL-00003" summary="PEP-8 updates">
+      <option name="closed" value="true" />
+      <created>1710768850156</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710768850156</updated>
+    </task>
+    <task id="LOCAL-00004" summary="improvements related to file import/export">
+      <option name="closed" value="true" />
+      <created>1710769345310</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710769345310</updated>
+    </task>
+    <task id="LOCAL-00005" summary="improvements for person full name">
+      <option name="closed" value="true" />
+      <created>1710834695914</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710834695914</updated>
+    </task>
+    <task id="LOCAL-00006" summary="unit tests added">
+      <option name="closed" value="true" />
+      <created>1710977232343</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710977232343</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix for full-name property">
+      <option name="closed" value="true" />
+      <created>1711109873871</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711109873871</updated>
+    </task>
+    <task id="LOCAL-00008" summary="unit tests for full_name strip">
+      <option name="closed" value="true" />
+      <created>1711111015655</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711111015655</updated>
+    </task>
+    <task id="LOCAL-00009" summary="clear inputs after person successfully added">
+      <option name="closed" value="true" />
+      <created>1711139131619</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711139131619</updated>
+    </task>
+    <task id="LOCAL-00010" summary="unit tests for age">
+      <option name="closed" value="true" />
+      <created>1711453898422</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711453898422</updated>
+    </task>
+    <task id="LOCAL-00011" summary="database initialization">
+      <option name="closed" value="true" />
+      <created>1712235483230</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712235483230</updated>
+    </task>
+    <task id="LOCAL-00012" summary="save person to database">
+      <option name="closed" value="true" />
+      <created>1712242236995</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1712242236995</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added focus on inputs and hotkeys" />
+    <MESSAGE value="PEP-8 updates" />
+    <MESSAGE value="improvements related to file import/export" />
+    <MESSAGE value="improvements for person full name" />
+    <MESSAGE value="unit tests added" />
+    <MESSAGE value="fix for full-name property" />
+    <MESSAGE value="unit tests for full_name strip" />
+    <MESSAGE value="clear inputs after person successfully added" />
+    <MESSAGE value="unit tests for age" />
+    <MESSAGE value="database initialization" />
+    <MESSAGE value="save person to database" />
+    <option name="LAST_COMMIT_MESSAGE" value="save person to database" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Diplom/person.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Diplom$person.coverage" NAME="person Coverage Results" MODIFIED="1710383528038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
-    <SUITE FILE_PATH="coverage/Diplom$UI.coverage" NAME="UI Coverage Results" MODIFIED="1710508179038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
+    <SUITE FILE_PATH="coverage/Diplom$.coverage" NAME=" Coverage Results" MODIFIED="1711453811705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Diplom$filetool.coverage" NAME="filetool Coverage Results" MODIFIED="1711109511640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
+    <SUITE FILE_PATH="coverage/Diplom$test.coverage" NAME="test Coverage Results" MODIFIED="1711452329342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
+    <SUITE FILE_PATH="coverage/Diplom$person.coverage" NAME="person Coverage Results" MODIFIED="1712253865176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
+    <SUITE FILE_PATH="coverage/Diplom$UI.coverage" NAME="UI Coverage Results" MODIFIED="1712255298955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Diplom" />
   </component>
 </project>

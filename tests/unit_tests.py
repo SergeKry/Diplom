@@ -32,7 +32,7 @@ class TestPerson(unittest.TestCase):
         birth_date = datetime.date(1990, 6,6)
         d_date = datetime.date(2000,6,7)
         person1 = Person('Alex', birth_date, 'чоловік', death_date=d_date)
-        self.assertEqual(person1.age, 10)
+        self.assertEqual(person1.calculate_age, 10)
 
 
 if __name__ == '__main__':
