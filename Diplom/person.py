@@ -1,10 +1,10 @@
 import datetime
 from dateutil.relativedelta import relativedelta
 from dateutil import parser
+import sqlite3
 
 
 class Person(object):
-    PERSONS = []
 
     @staticmethod
     def parse_date(date):
@@ -20,6 +20,15 @@ class Person(object):
         else:
             return None
 
+    @staticmethod
+    def save_person(name, gender, birth, death):
+        connection = sqlite3.connect("persons.db")
+        cursor = connection.cursor()
+        cursor.execute('''INSERT INTO persons VALUES(?,?,?,?)''',
+                       (name, gender, str(birth), str(death)))
+        connection.commit()
+        connection.close()
+
     def __init__(self, first_name, birth_date, gender, second_name=None, last_name=None, death_date=None):
         self.first_name = first_name.strip().title()
         self.birth_date = birth_date
@@ -27,8 +36,7 @@ class Person(object):
         self.second_name = second_name.strip().title() if second_name is not None else None
         self.last_name = last_name.strip().title() if last_name is not None else None
         self.death_date = death_date
-        Person.PERSONS.append((self.last_name, self.first_name, self.second_name, self.string_date(self.birth_date),
-                               self.string_date(self.death_date), self.gender, self.age, self.full_name))
+        Person.save_person(self.full_name, self.gender, self.birth_date, self.death_date)
 
     @property
     def age(self):

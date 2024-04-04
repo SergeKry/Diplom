@@ -18,7 +18,7 @@ frame.grid(column=1, row=1, sticky="NWES")
 connection = sqlite3.connect("persons.db")
 cursor = connection.cursor()
 cursor.execute('''CREATE TABLE IF NOT EXISTS persons 
-            (last_name TEXT, first_name TEXT, second_name TEXT, gender TEXT, birth_date TEXT, death_date TEXT)''')
+            (full_name TEXT, gender TEXT, birth_date TEXT, death_date TEXT)''')
 connection.commit()
 connection.close()
 
