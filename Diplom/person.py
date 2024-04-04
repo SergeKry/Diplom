@@ -8,7 +8,7 @@ class Person(object):
 
     @staticmethod
     def parse_date(date):
-        return parser.parse(date).date()
+        return parser.parse(date, dayfirst=True).date()
 
     @staticmethod
     def string_date(date):
