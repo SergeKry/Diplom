@@ -187,8 +187,8 @@ def search():
     search_input = ttk.Entry(frame, textvariable=search_key, width=60)
     search_input.grid(row=3, column=1, sticky="W", pady=3)
     search_input.focus()
-    search_button = ttk.Button(frame, text="Пошук", width=12, command=search_result)
-    search_button.grid(row=3, column=2, sticky='W', pady=3)
+    search_button = ttk.Button(frame, text="Пошук", command=search_result)
+    search_button.grid(row=3, column=2, sticky='WE', pady=3)
     root.bind('<Return>', search_result)
 
     result_area = Frame(frame, height=125, width=400, highlightbackground="grey", highlightthickness=1)
@@ -198,11 +198,15 @@ def search():
     result_label = ttk.Label(result_area, textvariable=search_output)
     result_label.grid(row=1, column=1, sticky="WE")
 
-    back = ttk.Button(frame, text="< Назад", command=add_or_find)
-    back.grid(row=6, column=1, sticky='W', pady=10)
+    back_button_area = Frame(frame)
+    back_button_area.grid(row=6, column=1, sticky='WE')
+    back = ttk.Button(back_button_area, text="< Назад", command=add_or_find)
+    back.grid(row=1, column=1, sticky='W', pady=10)
 
-    save = ttk.Button(frame, text="Зберегти у файл", width=12, command=save_file)
-    save.grid(row=6, column=2, sticky='E', pady=10)
+    save_button_area = Frame(frame)
+    save_button_area.grid(row=6, column=2, sticky='WE')
+    save = ttk.Button(save_button_area, text="Зберегти у файл", command=save_file)
+    save.grid(row=1, column=1, sticky='E', pady=10)
 
     for child in frame.winfo_children():
         child.grid_configure(padx=5)
