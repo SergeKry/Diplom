@@ -31,11 +31,11 @@ class Person(object):
         connection.close()
 
     def __init__(self, first_name, birth_date, gender, second_name=None, last_name=None, death_date=None):
-        self.first_name = first_name.strip().title()
+        self.first_name = first_name.strip().lower()
         self.birth_date = birth_date
         self.gender = gender
-        self.second_name = second_name.strip().title() if second_name is not None else None
-        self.last_name = last_name.strip().title() if last_name is not None else None
+        self.second_name = second_name.strip().lower() if second_name is not None else None
+        self.last_name = last_name.strip().lower() if last_name is not None else None
         self.death_date = death_date
         Person.save_person(self.full_name, self.gender, self.birth_date, self.death_date)
 
@@ -66,17 +66,17 @@ class Person(object):
             search_data = cursor.fetchall()
             for item in search_data:
                 result.append(cls.build_search_result_line(item))
-        # else:
-        #     for item in cls.PERSONS:
-        #         full_name = item[7]
-        #         if search_key.lower() in full_name.lower():
-        #             result.append(cls.build_search_result_line(item))
-
+        else:
+            search_key = f'%{search_key}%'
+            cursor.execute("""SELECT * FROM persons WHERE full_name LIKE (?)""", (search_key,))
+            search_data = cursor.fetchall()
+            for item in search_data:
+                result.append(cls.build_search_result_line(item))
         return result
 
     @staticmethod
     def build_search_result_line(data):
-        full_name = data[0]
+        full_name = data[0].title()
         age_expl = 'років'
         age = Person.calculate_age(data[2], data[3])
         if age % 10 == 1:
