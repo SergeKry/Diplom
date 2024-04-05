@@ -167,8 +167,11 @@ def search():
 
     def search_result(event=None):
         keyword = search_key.get()
-        result = '\n'.join(Person.print_search_result(keyword))
-        search_output.set(result)
+        result = Person.print_search_result(keyword)
+        result_list = []
+        for item in result:
+            result_list.append(item)
+        search_output.set(result_list)
 
     def save_file():
         keyword = search_key.get()
@@ -191,12 +194,16 @@ def search():
     search_button.grid(row=3, column=2, sticky='WE', pady=3)
     root.bind('<Return>', search_result)
 
-    result_area = Frame(frame, height=125, width=400, highlightbackground="grey", highlightthickness=1)
+    result_area = Frame(frame, width=400, height=125)
     result_area.grid(row=5, column=1, sticky='WE', columnspan=2)
-    result_area.grid_propagate(False)
-    search_output = StringVar()
-    result_label = ttk.Label(result_area, textvariable=search_output)
-    result_label.grid(row=1, column=1, sticky="WE")
+    result_area.grid_propagate(True)
+
+    search_output = StringVar(value=[])
+    listbox = Listbox(result_area, listvariable=search_output, height=6, width=77)
+    listbox.grid(column=1, row=1, sticky="NWES")
+    scroll = ttk.Scrollbar(result_area, orient=VERTICAL, command=listbox.yview)
+    scroll.grid(column=2, row=1, sticky="NES")
+    listbox['yscrollcommand'] = scroll.set
 
     back_button_area = Frame(frame)
     back_button_area.grid(row=6, column=1, sticky='WE')
